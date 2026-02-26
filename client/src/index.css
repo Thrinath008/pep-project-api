@@ -156,3 +156,53 @@ h4 {
   width: 140px;
   height: auto;
 }
+
+.weather-header {
+  padding: 40px 30px;
+  position: relative;
+  z-index: 5;
+}
+
+.main-temp {
+  font-size: 5rem;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1;
+  display: flex;
+  align-items: flex-start;
+}
+
+.temp-unit {
+  font-size: 2rem;
+  margin-top: 10px;
+  font-weight: 400;
+}
+
+.high-low {
+  font-size: 1.1rem;
+  font-weight: 500;
+  opacity: 0.8;
+  margin-top: 5px;
+}
+
+.location-name {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 10px;
+  max-width: 250px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.weather-footer {
+  padding: 20px 30px 40px;
+  position: relative;
+  z-index: 5;
+}
+
+.condition-text {
+  text-transform: capitalize;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
