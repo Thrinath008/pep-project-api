@@ -12,9 +12,12 @@ import Fruits from './pages/Fruits'
 function App() {
     return (
         <Router>
-            <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+            <nav className="navbar navbar-expand-lg sticky-top">
                 <div className="container">
-                    <Link className="navbar-brand" to="/">API Project</Link>
+                    <Link className="navbar-brand d-flex align-items-center" to="/">
+                        <span className="me-2">🚀</span>
+                        API HUB
+                    </Link>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                         <span className="navbar-toggler-icon"></span>
                     </button>
