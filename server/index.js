@@ -42,6 +42,20 @@ app.get('/api/jokes', async (req, res) => {
     }
 });
 
+// FBI Wanted API Endpoint
+app.get('/api/wanted', async (req, res) => {
+    const { page = 1, office = '' } = req.query;
+    try {
+        const response = await axios.get('https://api.fbi.gov/wanted/v1/list', {
+            params: { page, field_offices: office }
+        });
+        res.json(response.data);
+    } catch (error) {
+        res.status(500).json({ error: 'Failed to fetch FBI Wanted list' });
+    }
+});
+
+
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });

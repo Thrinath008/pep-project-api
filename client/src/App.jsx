@@ -6,6 +6,7 @@ import Contact from './pages/Contact'
 import Weather from './pages/Weather'
 import Gita from './pages/Gita'
 import Jokes from './pages/Jokes'
+import Wanted from './pages/Wanted'
 
 function App() {
     return (
@@ -29,6 +30,7 @@ function App() {
                                     <li><Link className="dropdown-item" to="/weather">Weather API</Link></li>
                                     <li><Link className="dropdown-item" to="/gita">Gita Verse API</Link></li>
                                     <li><Link className="dropdown-item" to="/jokes">Random Jokes</Link></li>
+                                    <li><Link className="dropdown-item" to="/wanted">FBI Wanted List</Link></li>
                                 </ul>
                             </li>
                         </ul>
@@ -44,6 +46,7 @@ function App() {
                     <Route path="/weather" element={<Weather />} />
                     <Route path="/gita" element={<Gita />} />
                     <Route path="/jokes" element={<Jokes />} />
+                    <Route path="/wanted" element={<Wanted />} />
                 </Routes>
             </div>
         </Router>
