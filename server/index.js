@@ -45,19 +45,35 @@ app.get('/api/jokes', async (req, res) => {
 // FBI Wanted API Endpoint
 app.get('/api/wanted', async (req, res) => {
     const { page = 1, office = '' } = req.query;
+
+    // Construct params object conditionally
+    const params = { page };
+    if (office) {
+        params.field_offices = office;
+    }
+
     try {
         const response = await axios.get('https://api.fbi.gov/wanted/v1/list', {
-            params: { page, field_offices: office },
+            params,
             headers: {
-                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
+                'Accept': 'application/json'
             }
         });
         res.json(response.data);
     } catch (error) {
-        console.error('FBI API Error:', error.message);
+        console.error('FBI API Error details:');
+        if (error.response) {
+            console.error('Status:', error.response.status);
+            console.error('Data:', JSON.stringify(error.response.data));
+        } else {
+            console.error('Message:', error.message);
+        }
         res.status(500).json({ error: 'Failed to fetch FBI Wanted list' });
     }
 });
+
+
 
 
 
