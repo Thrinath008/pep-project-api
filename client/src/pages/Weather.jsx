@@ -57,6 +57,9 @@ function Weather() {
                 <div className="weather-container">
                     <div className="premium-weather-card">
                         <div className="bg-slope"></div>
+                        <div className="weather-icon-3d">
+                            <img src={getIconUrl(weather.weather[0].icon)} alt="weather condition" />
+                        </div>
 
 
                         <div className="weather-header">

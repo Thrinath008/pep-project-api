@@ -45,8 +45,15 @@ function Wanted() {
                 {items.map((person) => (
                     <div className="col-md-6 col-lg-4" key={person.uid}>
                         <div className="card h-100 shadow-sm border-0 person-card overflow-hidden">
-                            <div style={{ height: '50px', backgroundColor: 'var(--accent-color)' }}>
+                            <div style={{ height: '300px', overflow: 'hidden', backgroundColor: '#f0f0f0' }}>
+                                <img
+                                    src={person.images[0]?.large || person.images[0]?.original || 'https://via.placeholder.com/300x400?text=No+Image'}
+                                    className="card-img-top h-100 w-100"
+                                    style={{ objectFit: 'cover' }}
+                                    alt={person.title}
+                                />
                             </div>
+
 
                             <div className="card-body">
                                 <h5 className="card-title fw-bold text-uppercase">{person.title}</h5>
