@@ -9,6 +9,12 @@ const PORT = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
+// Health Check route for Render/Vercel
+app.get('/', (req, res) => {
+    res.json({ status: 'API Hub Backend is running' });
+});
+
+
 app.get('/api/weather', async (req, res) => {
     const { city } = req.query;
     const API_KEY = process.env.WEATHER_API_KEY;
