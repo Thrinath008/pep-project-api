@@ -1,19 +1,120 @@
-body {
-  margin: 0;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: #f0f2f5;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --primary-color: #4f46e5;
+  --secondary-color: #6366f1;
+  --bg-color: #f1f5f9;
+  --card-bg: #ffffff;
+  --text-main: #1e293b;
+  --text-muted: #64748b;
 }
 
-/* Premium Weather Card Styles */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+}
+
+.navbar {
+  background: rgba(255, 255, 255, 0.8) !important;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  padding: 1rem 0;
+}
+
+.navbar-brand {
+  font-weight: 700;
+  color: var(--primary-color) !important;
+  letter-spacing: -0.5px;
+}
+
+.nav-link {
+  font-weight: 500;
+  color: var(--text-main) !important;
+  transition: color 0.2s;
+}
+
+.nav-link:hover {
+  color: var(--primary-color) !important;
+}
+
+.main-card {
+  background: var(--card-bg);
+  border-radius: 1.5rem;
+  border: none;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  padding: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.api-card {
+  transition: transform 0.2s;
+  cursor: pointer;
+  border-radius: 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  height: 100%;
+}
+
+.api-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+/* Custom button */
+.btn-premium {
+  background: var(--primary-color);
+  color: white;
+  border-radius: 0.75rem;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  border: none;
+  transition: all 0.2s;
+}
+
+.btn-premium:hover {
+  background: var(--secondary-color);
+  color: white;
+  transform: translateY(-1px);
+}
+
+/* Section background colors for cards on Home page */
+.bg-weather {
+  background-color: #eff6ff;
+}
+
+.bg-gita {
+  background-color: #fff7ed;
+}
+
+.bg-joke {
+  background-color: #fef2f2;
+}
+
+.bg-fbi {
+  background-color: #f5f3ff;
+}
+
+.bg-fruit {
+  background-color: #f0fdf4;
+}
+
+/* Keep the special weather card styles but integrate with global */
 .weather-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 2rem 0;
+  padding: 1rem 0;
 }
 
 .premium-weather-card {
@@ -26,64 +127,8 @@ body {
   overflow: hidden;
   color: white;
   box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.45);
-  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.premium-weather-card:hover {
-  transform: scale(1.02);
-}
-
-.weather-header {
-  padding: 2rem 2rem 0.5rem 2rem;
-  z-index: 5;
-  position: relative;
-}
-
-.main-temp {
-  font-size: 5.5rem;
-  font-weight: 200;
-  margin: 0;
-  line-height: 1;
-  letter-spacing: -2px;
-}
-
-.temp-unit {
-  font-size: 2rem;
-  vertical-align: top;
-  margin-left: -5px;
-}
-
-.high-low {
-  font-size: 1rem;
-  color: rgba(255, 255, 255, 0.6);
-  font-weight: 400;
-  margin-top: 4px;
-}
-
-.location-name {
-  font-size: 1.2rem;
-  font-weight: 500;
-  margin-top: 4px;
-  color: rgba(255, 255, 255, 0.95);
-}
-
-.weather-footer {
-  padding: 0 2rem 2rem 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  z-index: 5;
-  position: relative;
-}
-
-.condition-text {
-  font-size: 1rem;
-  color: rgba(255, 255, 255, 0.75);
-  text-transform: capitalize;
-  font-weight: 400;
-}
-
-/* Diagonal Background Slope */
 .bg-slope {
   position: absolute;
   top: 0;
@@ -100,51 +145,10 @@ body {
   top: 10px;
   right: 15px;
   z-index: 10;
-  filter: drop-shadow(0 15px 25px rgba(0,0,0,0.4));
+  filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.4));
 }
 
 .weather-icon-3d img {
   width: 140px;
   height: auto;
-  animation: float 4s ease-in-out infinite;
-}
-
-@keyframes float {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0px); }
-}
-
-/* Search UI */
-.search-container {
-  max-width: 500px;
-  margin: 0 auto;
-}
-
-.glass-input {
-  background: white;
-  border: 1px solid #dee2e6;
-  border-radius: 12px;
-  padding: 12px 20px;
-  font-size: 1.1rem;
-  transition: all 0.3s ease;
-}
-
-.glass-input:focus {
-  box-shadow: 0 0 0 4px rgba(72, 49, 157, 0.1);
-  border-color: #48319D;
-}
-
-.glass-btn {
-  border-radius: 12px;
-  padding: 0 25px;
-  background-color: #48319D;
-  border: none;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-}
-
-.glass-btn:hover {
-  background-color: #3b2882;
-  transform: translateY(-1px);
 }
