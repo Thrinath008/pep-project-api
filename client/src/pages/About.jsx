@@ -10,7 +10,7 @@ function About() {
 
 
                 <p className="lead text-secondary text-center mb-5">
-                    This platform was developed as a school submission to showcase the power of modern web technologies.
+                    This platform was developed as a technical showcase to demonstrate the power of modern web technologies.
                 </p>
 
                 <div className="row g-4">
@@ -28,9 +28,9 @@ function About() {
                     </div>
                 </div>
 
-                <div className="mt-5 p-4 rounded-3 text-center" style={{ backgroundColor: '#fdf2f2' }}>
-                    <h5 className="fw-bold mb-2">Developed for Viva 2026</h5>
-                    <p className="text-muted mb-0 small">Project Code: PEP-API-HUB-001</p>
+                <div className="mt-5 p-4 rounded-3 text-center" style={{ backgroundColor: '#f8fafc' }}>
+                    <h5 className="fw-bold mb-2">Developed by Thrinath</h5>
+                    <p className="text-muted mb-0 small">Version 1.0.0</p>
                 </div>
             </div>
         </div>

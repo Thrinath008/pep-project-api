@@ -31,7 +31,7 @@ function Fruits() {
         <div className="container py-4">
             <div className="text-center mb-5">
                 <h1 className="display-4 fw-bold text-success">Fruityvice API</h1>
-                <p className="lead text-muted">A school project displaying nutritional data for various fruits</p>
+                <p className="lead text-muted">Displaying nutritional data for various fruits</p>
             </div>
 
             <div className="row justify-content-center mb-5">

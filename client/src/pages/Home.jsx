@@ -16,7 +16,7 @@ function Home() {
             <div className="text-center mb-5 mt-4">
                 <h1 className="display-4 fw-bold mb-3">Project Hub</h1>
                 <p className="lead text-secondary mx-auto" style={{ maxWidth: '700px' }}>
-                    Welcome to our school project. This application serves as a central hub for various API integrations,
+                    Welcome to our Project Hub. This application serves as a central hub for various API integrations,
                     demonstrating how to handle diverse data sources in a modern React application.
                 </p>
             </div>

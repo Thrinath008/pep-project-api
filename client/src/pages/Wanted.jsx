@@ -29,7 +29,7 @@ function Wanted() {
         <div className="container py-4">
             <div className="text-center mb-5">
                 <h1 className="display-4 fw-bold text-danger">FBI Wanted Persons</h1>
-                <p className="lead text-muted">A school project displaying data from the Official FBI API</p>
+                <p className="lead text-muted">Displaying data from the Official FBI API</p>
             </div>
 
             {loading && (
