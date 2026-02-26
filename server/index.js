@@ -9,10 +9,9 @@ const PORT = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
-// Weather API Endpoint
 app.get('/api/weather', async (req, res) => {
     const { city } = req.query;
-    const API_KEY = 'd1767e18eaa2ad88e9e6fc0f378fef03';
+    const API_KEY = process.env.WEATHER_API_KEY;
     try {
         const response = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`);
         res.json(response.data);
@@ -21,7 +20,6 @@ app.get('/api/weather', async (req, res) => {
     }
 });
 
-// Gita Verse API Endpoint
 app.get('/api/gita/:chapter/:verse', async (req, res) => {
     const { chapter, verse } = req.params;
     try {
@@ -32,7 +30,6 @@ app.get('/api/gita/:chapter/:verse', async (req, res) => {
     }
 });
 
-// Jokes API Endpoint
 app.get('/api/jokes', async (req, res) => {
     try {
         const response = await axios.get('https://v2.jokeapi.dev/joke/Any');
@@ -42,11 +39,9 @@ app.get('/api/jokes', async (req, res) => {
     }
 });
 
-// FBI Wanted API Endpoint
 app.get('/api/wanted', async (req, res) => {
     const { page = 1, office = '' } = req.query;
 
-    // Construct params object conditionally
     const params = { page };
     if (office) {
         params.field_offices = office;
@@ -73,7 +68,6 @@ app.get('/api/wanted', async (req, res) => {
     }
 });
 
-// Fruityvice API Endpoint
 app.get('/api/fruit/all', async (req, res) => {
     try {
         const response = await axios.get('https://www.fruityvice.com/api/fruit/all', {

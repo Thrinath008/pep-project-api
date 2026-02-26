@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
+import API_BASE_URL from '../config'
 
 function Wanted() {
     const [items, setItems] = useState([])
@@ -10,7 +11,7 @@ function Wanted() {
     const fetchWanted = async () => {
         setLoading(true)
         try {
-            const response = await axios.get(`http://localhost:5000/api/wanted?page=${page}`)
+            const response = await axios.get(`${API_BASE_URL}/api/wanted?page=${page}`)
             setItems(response.data.items)
             setError('')
         } catch (err) {

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
+import API_BASE_URL from '../config'
 
 function Weather() {
     const [city, setCity] = useState('Hyderabad')
@@ -11,7 +12,7 @@ function Weather() {
         if (!city) return;
         setLoading(true)
         try {
-            const response = await axios.get(`http://localhost:5000/api/weather?city=${city}`)
+            const response = await axios.get(`${API_BASE_URL}/api/weather?city=${city}`)
             setWeather(response.data)
             setError('')
         } catch (err) {
@@ -22,7 +23,7 @@ function Weather() {
         }
     }
 
-    // Load a default city on mount
+
     useEffect(() => {
         fetchWeather()
     }, [])
