@@ -21,6 +21,9 @@ function Home() {
                 <li className="list-group-item">
                     <strong>FBI Wanted API:</strong> Displays data about wanted persons including images and legal details.
                 </li>
+                <li className="list-group-item">
+                    <strong>Fruits API:</strong> Provides detailed nutritional information for dozens of different fruits.
+                </li>
             </ul>
             <p>
                 The backend serves as a proxy to handle these requests securely and bypass CORS issues, ensuring a smooth user experience.

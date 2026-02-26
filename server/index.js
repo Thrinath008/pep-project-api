@@ -73,6 +73,20 @@ app.get('/api/wanted', async (req, res) => {
     }
 });
 
+// Fruityvice API Endpoint
+app.get('/api/fruit/all', async (req, res) => {
+    try {
+        const response = await axios.get('https://www.fruityvice.com/api/fruit/all', {
+            headers: {
+                'User-Agent': 'Mozilla/5.0'
+            }
+        });
+        res.json(response.data);
+    } catch (error) {
+        console.error('Fruits API Error:', error.message);
+        res.status(500).json({ error: 'Failed to fetch fruit data' });
+    }
+});
 
 
 
