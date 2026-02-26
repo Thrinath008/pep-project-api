@@ -3,11 +3,12 @@ import { Link } from 'react-router-dom'
 
 function Home() {
     const apis = [
-        { name: 'Weather API', description: 'Real-time weather data and forecasts.', path: '/weather', class: 'bg-weather', icon: '☁️' },
-        { name: 'Gita Verse API', description: 'Sacred verses from Bhagavad Gita in Telugu.', path: '/gita', class: 'bg-gita', icon: '🕉️' },
-        { name: 'Random Jokes API', description: 'Laugh out loud with random jokes.', path: '/jokes', class: 'bg-joke', icon: '😂' },
-        { name: 'FBI Wanted API', description: 'Live database of wanted individuals.', path: '/wanted', class: 'bg-fbi', icon: '🕵️' },
-        { name: 'Fruit Nutrition API', description: 'Nutritional facts for 50+ fruits.', path: '/fruits', class: 'bg-fruit', icon: '🍎' },
+        { name: 'Weather API', description: 'Real-time weather data and forecasts.', path: '/weather', class: 'bg-weather', icon: '' },
+        { name: 'Gita Verse API', description: 'Sacred verses from Bhagavad Gita in Telugu.', path: '/gita', class: 'bg-gita', icon: '' },
+        { name: 'Random Jokes API', description: 'Laugh out loud with random jokes.', path: '/jokes', class: 'bg-joke', icon: '' },
+        { name: 'FBI Wanted API', description: 'Live database of wanted individuals.', path: '/wanted', class: 'bg-fbi', icon: '' },
+        { name: 'Fruit Nutrition API', description: 'Nutritional facts for 50+ fruits.', path: '/fruits', class: 'bg-fruit', icon: '' },
+
     ]
 
     return (

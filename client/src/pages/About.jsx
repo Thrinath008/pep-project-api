@@ -5,11 +5,9 @@ function About() {
         <div className="py-5">
             <div className="main-card shadow-sm mx-auto" style={{ maxWidth: '800px' }}>
                 <div className="text-center mb-5">
-                    <div className="bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-4" style={{ width: '80px', height: '80px' }}>
-                        <span className="h1 m-0">👨‍💻</span>
-                    </div>
                     <h1 className="display-5 fw-bold">About Our Project</h1>
                 </div>
+
 
                 <p className="lead text-secondary text-center mb-5">
                     This platform was developed as a school submission to showcase the power of modern web technologies.
