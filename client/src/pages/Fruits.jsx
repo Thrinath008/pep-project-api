@@ -58,7 +58,7 @@ function Fruits() {
             <div className="row g-4">
                 {filteredFruits.map((fruit) => (
                     <div className="col-md-6 col-lg-4" key={fruit.id}>
-                        <div className="card h-100 shadow-sm border-0 fruit-card p-3" style={{ borderRadius: '20px', background: '#f8fff8' }}>
+                        <div className="card h-100 shadow-sm border-0 fruit-card p-3" style={{ borderRadius: '20px', background: '#ffffff', border: '1px solid var(--accent-color)' }}>
                             <div className="card-body">
                                 <div className="d-flex justify-content-between align-items-center mb-3">
                                     <h3 className="card-title fw-bold text-success m-0">{fruit.name}</h3>
