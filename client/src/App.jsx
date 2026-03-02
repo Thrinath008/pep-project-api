@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 import Home from './pages/Home'
 import About from './pages/About'
@@ -8,9 +8,42 @@ import Gita from './pages/Gita'
 import Jokes from './pages/Jokes'
 import Wanted from './pages/Wanted'
 import Fruits from './pages/Fruits'
+import API_BASE_URL from './config'
 
 function App() {
+    const [backendReady, setBackendReady] = useState(false);
+
+    useEffect(() => {
+        const checkBackend = async () => {
+            try {
+                const response = await fetch(`${API_BASE_URL}/`);
+                const data = await response.json();
+                if (data.status === 'API Hub Backend is running') {
+                    setBackendReady(true);
+                } else {
+                    setTimeout(checkBackend, 3000);
+                }
+            } catch (error) {
+                console.log("Waiting for backend to wake up...");
+                setTimeout(checkBackend, 3000);
+            }
+        };
+        checkBackend();
+    }, []);
+
+    if (!backendReady) {
+        return (
+            <div className="d-flex flex-column justify-content-center align-items-center vh-100" style={{ backgroundColor: 'var(--bg-color)' }}>
+                <h3 className="fw-bold mb-3" style={{ color: 'var(--text-main)' }}>Getting the backend ready...</h3>
+                <p className="text-secondary text-center px-4" style={{ maxWidth: '500px' }}>
+                    Please wait a moment. The server is waking up after a period of inactivity.
+                </p>
+            </div>
+        );
+    }
+
     return (
+
         <Router>
             <nav className="navbar navbar-expand-lg sticky-top">
                 <div className="container">
